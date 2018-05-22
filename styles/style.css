@@ -1,0 +1,109 @@
+body {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: cursive;
+}
+
+table>thead {
+    background-color: darkred;
+    color: white;
+}
+
+.location-map {
+    height: 175px;
+    width: 100%;
+}
+
+.main-dv {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    height: 100%;
+}
+
+.main-dv-md {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.main-dv-sm {
+    margin-left: 27%;
+    margin-right: 27%;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.left-main {
+    border-right: 3px solid darkred;
+    border-radius: 15px;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'] {
+    margin: 5px;
+}
+
+.btn-rad {
+    border-radius: 10px;
+}
+
+.red {
+    color: red;
+}
+
+.dv-timer {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    padding-top: 75px;
+    box-shadow: 5px 5px 54px 17px;
+}
+
+.timer-text {
+    color: darkred;
+    font-size: 45px;
+    font-family: cursive;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.dv-master-date {
+    background-color: darkred;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.rw {
+    background-color: black;
+    margin-top: 250px;
+    position: absolute;
+    width: 300px;
+    height: 10px;
+    border-top-right-radius: 10px;
+}
+
+.cl {
+    position: absolute;
+    width: 10px;
+    height: 250px;
+}
+
+.cl-vertical {
+    border-top-right-radius: 10px;
+    background-color: black;
+}
+
+.cl-not-started,
+.cl-working,
+.cl-finished {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 0px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<!-- Mohamed Hassan -->
+    <meta charset="UTF-8">
+    <!-- plugins -->
+    <link rel="stylesheet" href="plugins/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
+    <!-- my scripts -->
+    <script type="text/javascript" src="scripts/dateTimeHelper.js"></script>
+    <script type="text/javascript" src="scripts/tasks.js"></script>
+    <script>
+        $(document).ready(function () {
+            var id = window.location.href.split('?')[1].replace('id=', '');
+            var task = findTask(id);
+            if (task != null) {
+                switch (task.status) {
+                    case status_enum.not_start:
+                        document.getElementById('timer').appendChild(startbtn(null, id));
+                        break;
+                    case status_enum.working:
+                        document.getElementById('timer').innerHTML = task.current_minutes + ":" + task.current_seconds;
+                        interval_all(task);
+                        break;
+                    case status_enum.finished:
+                        document.getElementById('timer').appendChild(finishedbtn());
+                        break;
+                };
+                document.getElementById('taskName').innerHTML = task.name;
+                document.getElementById('taskDate').innerHTML = task.date;
+                document.getElementById('taskPeriod').innerHTML = task.period;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid main-dv main-dv-sm">
+        <a href="index.html" class="btn btn-warning">Back</a>
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-9">
+                <hr />
+                <div class="dv-timer text-center">
+                    <b>
+                        <h1 id="timer" class="timer-text"></h1>
+                    </b>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row" style="margin: 20px;">
+            <div class="col-xs-12">
+                <table class="table table-bordered table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Date</th>
+                            <th>Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h3 id="taskName"></h3>
+                            </td>
+                            <td>
+                                <h3 id="taskDate"></h3>
+                            </td>
+                            <td>
+                                <h3 id="taskPeriod"></h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>

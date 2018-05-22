@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- plugins -->
+    <link rel="stylesheet" href="plugins/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
+    <!-- my scripts -->
+    <script type="text/javascript" src="scripts/dateTimeHelper.js"></script>
+    <script type="text/javascript" src="scripts/location.js"></script>
+    <script type="text/javascript" src="scripts/weather.js"></script>
+    <script type="text/javascript" src="scripts/tasks.js"></script>
+    <script>
+        $(document).ready(function () {
+            interval_all();
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid main-dv">
+        <div class="row">
+            <!-- WEATHER & LOCATION __________________________________________________________________________________ -->
+            <div class="col-xs-3 left-main" style="padding-top:5px;min-height:500px;">
+                <!-- date time -->
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-xs-12">
+                        <div id="dvdateTime" class="dv-master-date text-center"></div>
+                    </div>
+                </div>
+                <hr />
+                <!-- weather -->
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div id="weather" style="max-height: 200px;overflow: auto;">
+                            <table class="table table-hover table-responsive table-bordered">
+                                <tbody id="tblWeatherBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!-- location -->
+                <div class="row" style="padding-bottom: 20px;">
+                    <div class="col-xs-12">
+                        <b>location: </b>
+                        <h4 id="CityName"></h4>
+                        <div id="location_map"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- TASKS ______________________________________________________________________________________________ -->
+            <div class="col-xs-9 right-main">
+                <div class="row">
+                    <div class="col-xs-8"></div>
+                    <div class="col-xs-4">
+                        <a href="addTask.html" class="btn btn-primary">Add Task</a>
+                        <a href="analytics.html" class="btn btn-success">
+                            <i class="glyphicon glyphicon-signal"></i> Analytics</a>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table id="tblAllTasks" class="table table-bordered table-hover table-reponsive">
+                            <thead>
+                                <tr>
+                                    <th class='text-center'>#</th>
+                                    <th class='text-center'>Task Name</th>
+                                    <th class='text-center'>Task Period</th>
+                                    <th class='text-center'>Task Date</th>
+                                    <th class='text-center'>Task Status</th>
+                                    <th class='text-center'>#</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblAllTasksBody">
+                                <script>
+                                    $(document).ready(function () {
+                                        GetAllTasks();
+                                    });
+                                </script>
+                                </tb class='text-center' ody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
